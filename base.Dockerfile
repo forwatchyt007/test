@@ -23,8 +23,8 @@ RUN sudo -u ${username} -- git clone https://aur.archlinux.org/paru.git ${paru_p
 RUN cd ${paru_path} && sudo -u arch -- makepkg -si --noconfirm
 RUN rm -rf ${paru_path}
 
-# #more_lib
-# RUN pacman -S --noconfirm libxkbfile libbsd
+#more_lib
+RUN pacman -S --noconfirm libxkbfile libbsd
 
 # #base_gui_app
 # RUN pacman -S --noconfirm firefox thunar
