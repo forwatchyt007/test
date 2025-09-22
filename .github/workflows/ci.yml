@@ -33,7 +33,7 @@ jobs:
           # list of Docker images to use as base name for tags
           images: |
             name/app
-            ghcr.io/potang/testapp
+            ghcr.io/forwatchyt007/test
           # generate Docker tags based on the following events/attributes
           tags: |
             type=schedule
