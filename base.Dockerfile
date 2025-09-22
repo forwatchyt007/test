@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 archlinux:multilib-devel
+FROM archlinux:multilib-devel
 
 RUN pacman -Syu --noconfirm
 RUN pacman -S --noconfirm --needed git base-devel
