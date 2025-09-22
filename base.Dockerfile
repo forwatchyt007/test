@@ -15,13 +15,13 @@ RUN pacman -S --noconfirm --needed git base-devel
 # RUN pacman -S --noconfirm fontconfig noto-fonts gnu-free-fonts ttf-liberation
 
 #AUR
-ARG username="arch"
-ARG paru_path="/home/${username}/paru"
-RUN echo "${username} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-RUN useradd -m -G wheel,users,kvm,render,video,audio ${username} && passwd -d ${username}
-RUN sudo -u ${username} -- git clone https://aur.archlinux.org/paru-bin.git ${paru_path}
-RUN cd ${paru_path} && sudo -u arch -- makepkg -si --noconfirm
-RUN rm -rf ${paru_path}
+# ARG username="arch"
+# ARG paru_path="/home/${username}/paru"
+# RUN echo "${username} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+# RUN useradd -m -G wheel,users,kvm,render,video,audio ${username} && passwd -d ${username}
+# RUN sudo -u ${username} -- git clone https://aur.archlinux.org/paru-bin.git ${paru_path}
+# RUN cd ${paru_path} && sudo -u arch -- makepkg -si --noconfirm
+# RUN rm -rf ${paru_path}
 
 #more_lib
 RUN pacman -S --noconfirm libxkbfile libbsd
