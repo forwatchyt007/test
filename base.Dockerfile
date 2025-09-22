@@ -1,7 +1,8 @@
 FROM archlinux:multilib-devel
 
-RUN pacman -Syu --noconfirm
-RUN pacman -S --noconfirm --needed git base-devel
+RUN pacman -Sy --noconfirm
+# RUN pacman -Syu --noconfirm
+# RUN pacman -S --noconfirm --needed git base-devel
 
 # #graphic
 # RUN pacman -S --noconfirm lib32-mesa-demos lib32-mesa-utils mesa mesa-demos mesa-utils libva lib32-libva
@@ -24,7 +25,7 @@ RUN pacman -S --noconfirm --needed git base-devel
 # RUN rm -rf ${paru_path}
 
 #more_lib
-RUN pacman -S --noconfirm libxkbfile libbsd
+# RUN pacman -S --noconfirm libxkbfile libbsd
 
 # #base_gui_app
 # RUN pacman -S --noconfirm firefox thunar
