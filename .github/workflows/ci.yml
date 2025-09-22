@@ -50,6 +50,6 @@ jobs:
         with:
           platforms: linux/amd64
           file: base.Dockerfile
-          push: ${{ github.event_name != 'pull_request' && github.ref_name == release }}
+          push: ${{ github.event_name != 'pull_request' && github.ref_name == 'release' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
