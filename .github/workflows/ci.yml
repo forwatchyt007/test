@@ -63,13 +63,6 @@ jobs:
         with:
           platforms: linux/amd64
           file: base.Dockerfile
-          push: false
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
