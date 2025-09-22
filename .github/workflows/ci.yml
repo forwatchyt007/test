@@ -48,7 +48,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          platforms: linux/amd64
+          # platforms: linux/amd64
           file: base.Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ghcr.io/forwatchyt007/test:latest
