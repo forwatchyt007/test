@@ -19,7 +19,7 @@ ARG username="arch"
 ARG paru_path="/home/${username}/paru"
 RUN echo "${username} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN useradd -m -G wheel,users,kvm,render,video,audio ${username} && passwd -d ${username}
-RUN sudo -u ${username} -- git clone https://aur.archlinux.org/paru.git ${paru_path}
+RUN sudo -u ${username} -- git clone https://aur.archlinux.org/paru-bin.git ${paru_path}
 RUN cd ${paru_path} && sudo -u arch -- makepkg -si --noconfirm
 RUN rm -rf ${paru_path}
 
