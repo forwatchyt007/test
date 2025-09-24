@@ -1,14 +1,9 @@
 name: ci
 
 on:
-  schedule:
-    - cron: "0 10 * * *"
   push:
-    branches:
-      - "**"
     tags:
       - "v*.*.*"
-  pull_request:
 
 jobs:
   docker:
@@ -50,6 +45,6 @@ jobs:
         with:
           platforms: linux/amd64
           file: base.Dockerfile
-          push: ${{ github.event_name != 'pull_request' && github.ref_name == 'release' }}
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
