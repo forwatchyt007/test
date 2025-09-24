@@ -27,7 +27,7 @@ jobs:
             type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}.{{minoxr}}
             type=semver,pattern={{major}}
             type=sha
 
@@ -50,6 +50,6 @@ jobs:
         with:
           platforms: linux/amd64
           file: base.Dockerfile
-          push: ${{ github.event_name != 'pull_request' && github.ref_name == 'test' }}
+          push: ${{ github.event_name != 'pull_request' && github.ref_name == 'release' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
