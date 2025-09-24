@@ -1,4 +1,4 @@
-FROM archlinux:multilib-devel
+FROM --platform=linux/amd64 archlinux:multilib-devel
 
 RUN pacman -Sy --noconfirm
 # RUN pacman -Syu --noconfirm
