@@ -26,5 +26,6 @@ RUN rm -rf ${paru_path}
 #more_lib
 RUN pacman -S --noconfirm libxkbfile libbsd
 
-# #base_gui_app
+#gui_app
 RUN sudo -u arch -- paru -S --noconfirm firefox brave-bin ungoogled-chromium-bin
+RUN sudo -u arch -- paru -S --noconfirm zed android-studio
